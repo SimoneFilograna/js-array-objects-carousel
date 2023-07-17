@@ -1,6 +1,11 @@
 "use strict"
 
 const carouselContainer = document.querySelector(".carousel-container");
+const btnNext = document.getElementById("btn-next");
+const btnPrev = document.getElementById("btn-prev");
+
+//imposto counter
+let counter = 0;
 
 const images = [
     {
@@ -33,20 +38,35 @@ images.forEach(element => {
         //creo il container
     let carousImgContainer = document.createElement("div");
 
+    counter++;
+
     carouselContainer.append(carousImgContainer);
 
     carousImgContainer.classList.add("carousel-img");
     
-    carousImgContainer.innerHTML += `<div class="carousel-img">
-                                        <img src="${element.image}" class="img-carous">
-                                    </div>`
+    carousImgContainer.innerHTML += `<img src="${element.image}" class="img-carous">`;
+
+    
+
+    if(counter === 1){
+        carousImgContainer.classList.add("active");
+    }
     
 });
 
+    
 
 
+btnNext.addEventListener("click", function(){
+    //recupero tutti i div con img 
 
-//creo il container che conterrà le img
+    const imgList = document.querySelectorAll(".carousel-img");
+    console.log(imgList)
+    counter++;
+
+
+})
+
 
 
 
