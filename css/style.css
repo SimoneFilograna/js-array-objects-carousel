@@ -24,12 +24,6 @@
     opacity: 0;
 }
 
-
-.active{
-    opacity: 1;
-}
-
-
 .button-container{
     width: 60%;
     border: 1px solid red;
@@ -42,4 +36,9 @@
 
 .main-container{
     position: relative;
+}
+
+
+.active{
+opacity: 1;
 }

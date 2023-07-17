@@ -38,7 +38,7 @@ for(let i = 0; i < images.length; i++){
 
     const singleEl = images[i];
 
-    let opacity = " ";
+    let visibPhoto = "";
 
     console.log(singleEl)
 
@@ -48,14 +48,52 @@ for(let i = 0; i < images.length; i++){
     
     carouselContainer.append(carousImgContainer);
 
-    carousImgContainer.innerHTML += `<img src="${singleEl.image}" class="img-carous ${opacity}">`  
-
     if( i === 0) {
-        opacity = "active"
+        visibPhoto = "active";
     }
+    
+    carousImgContainer.innerHTML += `<img src="${singleEl.image}" class="img-carous ${visibPhoto}">`  
 
 }
 
 
+// imposto l'evento per il button next
 
+btnNext.addEventListener("click", function(){
+    const allImg = document.querySelectorAll(".img-carous");
+
+    console.log(allImg);
+
+    //togliamo la classse active dalle img
+
+    allImg[counter].classList.remove("active");
+    counter++;
+
+    //rendiamo visibile l'immagine dopo con la condizione
+
+    if( counter > allImg.length - 1){
+        counter = 0;
+    }
+
+    allImg[counter].classList.add("active");
+
+})
+
+
+//imposto evento button back
+
+btnPrev.addEventListener("click", function(){
+
+    const allImg = document.querySelectorAll(".img-carous");
+
+    allImg[counter].classList.remove("active");
+    
+    counter--;
+
+    if( counter < 0){
+        counter = allImg.length -1
+    }
+
+    allImg[counter].classList.add("active");
+})
 
