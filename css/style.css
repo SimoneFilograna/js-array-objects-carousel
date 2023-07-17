@@ -1,7 +1,6 @@
 .carousel-container{
     width: 1200px;
-    height: 600px;
-    border: 1px solid red;
+    height: 600px;   
     margin: 10vh auto;
     position: relative;
 }
@@ -26,7 +25,6 @@
 
 .button-container{
     width: 60%;
-    border: 1px solid red;
     margin: 25vh auto;
     position: absolute;
     top: 0;
@@ -42,3 +40,4 @@
 .active{
 opacity: 1;
 }
+
