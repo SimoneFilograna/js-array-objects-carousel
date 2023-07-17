@@ -32,40 +32,29 @@ const images = [
 ];
 
 
-//ciclo la creazione di un container per ogni oggetto nell'array
+//ciclo la creazione di un container per ogni oggetto nell'array e inserimento iommagini
 
-images.forEach(element => {
-        //creo il container
+for(let i = 0; i < images.length; i++){
+
+    const singleEl = images[i];
+
+    let opacity = " ";
+
+    console.log(singleEl)
+
     let carousImgContainer = document.createElement("div");
-
-    counter++;
-
-    carouselContainer.append(carousImgContainer);
 
     carousImgContainer.classList.add("carousel-img");
     
-    carousImgContainer.innerHTML += `<img src="${element.image}" class="img-carous">`;
+    carouselContainer.append(carousImgContainer);
 
-    
+    carousImgContainer.innerHTML += `<img src="${singleEl.image}" class="img-carous ${opacity}">`  
 
-    if(counter === 1){
-        carousImgContainer.classList.add("active");
+    if( i === 0) {
+        opacity = "active"
     }
-    
-});
 
-    
-
-
-btnNext.addEventListener("click", function(){
-    //recupero tutti i div con img 
-
-    const imgList = document.querySelectorAll(".carousel-img");
-    console.log(imgList)
-    counter++;
-
-
-})
+}
 
 
 
