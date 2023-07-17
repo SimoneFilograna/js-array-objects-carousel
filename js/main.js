@@ -1,7 +1,6 @@
 "use strict"
 
-const carouselContainer = document.getElementById("carousel-container");
-
+const carouselContainer = document.querySelector(".carousel-container");
 
 const images = [
     {
@@ -27,8 +26,27 @@ const images = [
     }
 ];
 
-//creo il container che conterrà le img
 
+//ciclo la creazione di un container per ogni oggetto nell'array
+
+images.forEach(element => {
+        //creo il container
+    let carousImgContainer = document.createElement("div");
+
+    carouselContainer.append(carousImgContainer);
+
+    carousImgContainer.classList.add("carousel-img");
+    
+    carousImgContainer.innerHTML += `<div class="carousel-img">
+                                        <img src="${element.image}" class="img-carous">
+                                    </div>`
+    
+});
+
+
+
+
+//creo il container che conterrà le img
 
 
 
